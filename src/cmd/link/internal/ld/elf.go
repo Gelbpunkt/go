@@ -185,6 +185,9 @@ func Elfinit(ctxt *Link) {
 		if ctxt.Arch.Family == sys.Loong64 {
 			ehdr.Flags = 0x43 // DOUBLE_FLOAT, OBJABI_V1
 		}
+		if ctxt.Arch.Family == sys.PPC64 {
+			ehdr.Flags = 2 /* Version 2 ABI */
+		}
 		if ctxt.Arch.Family == sys.RISCV64 {
 			ehdr.Flags = 0x4 // RISCV Float ABI Double
 		}

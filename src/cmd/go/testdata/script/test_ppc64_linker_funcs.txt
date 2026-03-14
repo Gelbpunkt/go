@@ -8,7 +8,7 @@
 [!GOOS:linux] skip
 [!compiler:gc] skip
 [!cgo] skip
-[!GOARCH:ppc64le] skip
+[!GOARCH:ppc64] [!GOARCH:ppc64le] skip
 
 go build -ldflags='-linkmode=internal'
 exec ./abitest

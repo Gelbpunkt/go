@@ -2781,6 +2781,8 @@ func (b *Builder) gccArchArgs() []string {
 	case "ppc64":
 		if cfg.Goos == "aix" {
 			return []string{"-maix64"}
+		} else {
+			return []string{"-mabi=elfv2", "-m64"}
 		}
 	}
 	return nil

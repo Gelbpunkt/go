@@ -3995,7 +3995,7 @@ func addTailCall(pos src.XPos, fn *ir.Func, recv ir.Node, method *types.Field) {
 	if recv.Type() != nil && recv.Type().IsPtr() && method.Type.Recv().Type.IsPtr() &&
 		method.Embedded != 0 && !types.IsInterfaceMethod(method.Type) &&
 		!unifiedHaveInlineBody(ir.MethodExprName(dot).Func) &&
-		!(base.Ctxt.Arch.Name == "ppc64le" && base.Ctxt.Flag_dynlink) {
+		!((base.Ctxt.Arch.Name == "ppc64le" || base.Ctxt.Arch.Name == "ppc64") && base.Ctxt.Flag_dynlink) {
 		if base.Debug.TailCall != 0 {
 			base.WarnfAt(fn.Nname.Type().Recv().Type.Elem().Pos(), "tail call emitted for the method %v wrapper", method.Nname)
 		}

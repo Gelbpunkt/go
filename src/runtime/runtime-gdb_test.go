@@ -34,9 +34,6 @@ func checkGdbEnvironment(t *testing.T) {
 	case "netbsd":
 		t.Skip("gdb does not work with threads on NetBSD; see https://golang.org/issue/22893 and https://gnats.netbsd.org/52548")
 	case "linux":
-		if runtime.GOARCH == "ppc64" {
-			t.Skip("skipping gdb tests on linux/ppc64; see https://golang.org/issue/17366")
-		}
 		if runtime.GOARCH == "mips" {
 			t.Skip("skipping gdb tests on linux/mips; see https://golang.org/issue/25939")
 		}

@@ -871,11 +871,6 @@ func TestRuntimeTypeAttrExternal(t *testing.T) {
 
 	mustHaveDWARF(t)
 
-	// Explicitly test external linking, for dsymutil compatibility on Darwin.
-	if runtime.GOARCH == "ppc64" {
-		t.Skip("-linkmode=external not supported on ppc64")
-	}
-
 	testRuntimeTypeAttr(t, "-ldflags=-linkmode=external")
 }
 

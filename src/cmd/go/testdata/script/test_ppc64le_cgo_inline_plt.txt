@@ -8,6 +8,8 @@
 #
 # Note, older gcc/clang may accept this option, but
 # ignore it if binutils does not support the relocs.
+#
+# FIXME: ppc64 needs fixing
 [!compiler:gc] skip
 [!cgo] skip
 [!GOARCH:ppc64le] skip

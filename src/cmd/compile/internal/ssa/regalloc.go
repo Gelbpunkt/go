@@ -753,6 +753,7 @@ func (s *regAllocState) init(f *Func) {
 		case "loong64": // R2 (aka TP) already reserved.
 			// nothing to do
 		case "ppc64le": // R2 already reserved.
+		case "ppc64":
 			// nothing to do
 		case "riscv64": // X3 (aka GP) and X4 (aka TP) already reserved.
 			// nothing to do
